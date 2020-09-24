@@ -1,0 +1,523 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:theme="@style/AppTheme">
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flexWrap="wrap"
+        app:alignItems="stretch"
+        app:alignContent="stretch"
+        app:justifyContent="center">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ma_card1"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/white"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:cardMaxElevation="8dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="false"
+            app:contentPadding="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/ma_card1_headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/praca"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+                    android:textSize="24dp"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/ma_card1_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ma_card1_headline"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/dzienDzisiejszy"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14dp"
+                    tools:ignore="SpUsage" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarInactive"
+                    style="?android:progressBarStyleHorizontal"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignTop="@+id/ma_card1_subtitle"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/circle_small"
+                    android:progressTint="#367C909C"
+                    android:visibility="visible" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:progressBarStyleHorizontal"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignTop="@+id/ma_card1_subtitle"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:progress="60"
+                    android:progressDrawable="@drawable/circle_small"
+                    android:progressTint="@color/my_app_primary_variant_color"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/card1_body_percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/progressBar"
+                    android:layout_alignTop="@+id/progressBar"
+                    android:layout_alignEnd="@+id/progressBar"
+                    android:layout_alignBottom="@+id/progressBar"
+                    android:gravity="center"
+                    android:text="@string/placeholderPercentage"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16dp"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/ma_card1_header1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ma_card1_subtitle"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/przepracawoano"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="12dp"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/ma_card1_body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ma_card1_header1"
+                    android:layout_alignStart="@+id/ma_card1_header1"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/placeholderTime"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16dp"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/ma_card1_header2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ma_card1_body1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/pozostalo"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="12dp"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/ma_card1_body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ma_card1_header2"
+                    android:layout_alignStart="@+id/ma_card1_body1"
+                    android:text="@string/placeholderTime"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16dp"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/card1_actionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/przejdzDoSesji"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                    android:textColor="@color/my_app_primary_variant_color"
+                    android:textSize="14dp"
+                    tools:ignore="SpUsage" />
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="4dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card2"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/white"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:cardMaxElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="false"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/ma_card2_header1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/nadgodziny"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="14dp"
+                        tools:ignore="SpUsage" />
+
+                    <TextView
+                        android:id="@+id/ma_card2_body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ma_card2_header1"
+                        android:layout_marginTop="4dp"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/placeholderTime"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:textColor="@color/green"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        tools:ignore="SpUsage" />
+
+                    <TextView
+                        android:id="@+id/ma_card2_actionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ma_card2_body1"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/szczegoly"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                        android:textColor="@color/my_app_primary_variant_color"
+                        android:textSize="14sp"
+                        />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card3"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:cardMaxElevation="8dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="false"
+                app:contentPadding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/ma_card3_header1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/wyplata"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="14dp"
+                        tools:ignore="SpUsage" />
+
+                    <TextView
+                        android:id="@+id/ma_card3_body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ma_card3_header1"
+                        android:layout_marginTop="4dp"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/placeholderMoney"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:textColor="@color/green"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        tools:ignore="SpUsage" />
+
+                    <TextView
+                        android:id="@+id/ma_card3_actionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ma_card3_body1"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/szczegoly"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                        android:textColor="@color/my_app_primary_variant_color"
+                        android:textSize="14dp"
+                        tools:ignore="SpUsage" />
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card4"
+            android:layout_width="379dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@color/white"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:cardMaxElevation="8dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="false"
+            app:contentPadding="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/card4_headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/raport"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+                    android:textSize="24dp"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/card4_subtitle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card4_headline"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/zeszlyMiesiac"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14dp"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/card4_subtitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card4_headline"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/obecnyMiesiac"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14dp"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/card4_subtitle3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card4_subtitle1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/przepracowaneGodziny"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14dp"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/card4_subtitle4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card4_subtitle1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/przepracowaneGodziny"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14dp"
+                    tools:ignore="SpUsage" />
+
+                <View
+                    android:id="@+id/separator"
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="#c0c0c0" />
+
+                <TextView
+                    android:id="@+id/card4_body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/card4_subtitle3"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/placeholderNumber3d"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textColor="@color/design_default_color_primary"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    />
+
+                <TextView
+                    android:id="@+id/card4_body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/card4_body1"
+                    android:layout_marginEnd="32dp"
+                    android:layout_toEndOf="@id/card4_body1"
+                    android:text="@string/placeholderNumberHours"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    />
+
+                <TextView
+                    android:id="@+id/card4_body3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/card4_subtitle3"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toStartOf="@id/card4_body4"
+                    android:text="@string/placeholderNumber2d"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textColor="@color/design_default_color_primary"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/card4_body4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/card4_body1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/placeholderNumberHours"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/card4_subtitle5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card4_body4"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/zarobionePieniadze"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14dp"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/card4_subtitle6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card4_body4"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/zarobionePieniadze"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14dp"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/card4_body5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/card4_subtitle5"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/placeholderMoney"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textColor="@color/design_default_color_primary"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/card4_body6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/card4_subtitle6"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/placeholderMoney"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textColor="@color/design_default_color_primary"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    tools:ignore="SpUsage" />
+
+                <TextView
+                    android:id="@+id/card4_actionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@id/card4_subtitle2"
+                    android:layout_below="@+id/card4_body6"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/wiecej"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                    android:textColor="@color/my_app_primary_variant_color"
+                    android:textSize="14dp"
+                    tools:ignore="SpUsage" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </com.google.android.flexbox.FlexboxLayout>
+</ScrollView>
+

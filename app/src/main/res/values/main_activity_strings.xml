@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="praca">Praca</string>
+    <string name="dzienDzisiejszy">Dzień dzisiejszy</string>
+    <string name="czasPracy">Czas pracy:</string>
+    <string name="pozostalo">Pozostało:</string>
+    <string name="przepracawoano">Przepracowano:</string>
+    <string name="przejdzDoSesji">Przejdź do sesji</string>
+    <string name="nadgodziny">Nadgodziny:</string>
+    <string name="szczegoly">Szczegóły</string>
+    <string name="wyplata">Wypłata:</string>
+    <string name="raport">Raport</string>
+    <string name="zeszlyMiesiac">Zeszły miesiąc</string>
+    <string name="obecnyMiesiac">Obecny miesiąc</string>
+    <string name="przepracowaneGodziny">Przepracowane godziny:</string>
+    <string name="zarobionePieniadze">Zarobione pieniądze:</string>
+    <string name="wiecej">Więcej</string>
+
+    <string name="placeholderNumberHours">/160 h</string>
+    <string name="placeholderNumber3d">162</string>
+    <string name="placeholderNumber2d">32</string>
+    <string name="placeholderMoney">4 292 zł</string>
+    <string name="placeholderTime">24h 21min</string>
+    <string name="placeholderPercentage">60%</string>
+</resources>
