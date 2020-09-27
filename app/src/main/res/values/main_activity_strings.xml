@@ -5,7 +5,10 @@
     <string name="czasPracy">Czas pracy:</string>
     <string name="pozostalo">Pozostało:</string>
     <string name="przepracawoano">Przepracowano:</string>
+
+    <string name="rozpocznijSesje">Rozpocznij sesję</string>
     <string name="przejdzDoSesji">Przejdź do sesji</string>
+
     <string name="nadgodziny">Nadgodziny:</string>
     <string name="szczegoly">Szczegóły</string>
     <string name="wyplata">Wypłata:</string>
@@ -22,4 +25,8 @@
     <string name="placeholderMoney">4 292 zł</string>
     <string name="placeholderTime">24h 21min</string>
     <string name="placeholderPercentage">60%</string>
+
+    <string name="time0">0h 00min</string>
+    <string name="progress100">100%</string>
+    <string name="time8h">8h 00min</string>
 </resources>

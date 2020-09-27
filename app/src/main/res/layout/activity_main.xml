@@ -7,17 +7,14 @@
     android:background="@color/colorPrimary"
     android:theme="@style/AppTheme">
 
-    <com.google.android.flexbox.FlexboxLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:flexWrap="wrap"
-        app:alignItems="stretch"
-        app:alignContent="stretch"
-        app:justifyContent="center">
+        android:orientation="vertical">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/ma_card1"
-            android:layout_width="215dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp"
@@ -42,10 +39,10 @@
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="4dp"
                     android:text="@string/praca"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold"
-                    android:textSize="24dp"
+                    android:textSize="20dp"
                     tools:ignore="SpUsage" />
 
                 <TextView
@@ -60,43 +57,55 @@
                     android:textSize="14dp"
                     tools:ignore="SpUsage" />
 
+                <View
+                    android:id="@+id/ma_card1_separator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/ma_card1_subtitle"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@color/colorPrimary" />
+
                 <ProgressBar
-                    android:id="@+id/progressBarInactive"
+                    android:id="@+id/ma_card1_progressBarInactive"
                     style="?android:progressBarStyleHorizontal"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_alignTop="@+id/ma_card1_subtitle"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignTop="@+id/ma_card1_subtitle2"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginEnd="48dp"
                     android:progress="100"
                     android:progressDrawable="@drawable/circle_small"
                     android:progressTint="#367C909C"
                     android:visibility="visible" />
 
                 <ProgressBar
-                    android:id="@+id/progressBar"
+                    android:id="@+id/ma_card1_progressBar"
                     style="?android:progressBarStyleHorizontal"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_alignTop="@+id/ma_card1_subtitle"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignTop="@+id/ma_card1_subtitle2"
                     android:layout_alignParentEnd="true"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginEnd="48dp"
                     android:progress="60"
                     android:progressDrawable="@drawable/circle_small"
                     android:progressTint="@color/my_app_primary_variant_color"
                     android:visibility="visible" />
 
                 <TextView
-                    android:id="@+id/card1_body_percent"
+                    android:id="@+id/card1_progress_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/progressBar"
-                    android:layout_alignTop="@+id/progressBar"
-                    android:layout_alignEnd="@+id/progressBar"
-                    android:layout_alignBottom="@+id/progressBar"
+                    android:layout_alignStart="@+id/ma_card1_progressBar"
+                    android:layout_alignTop="@+id/ma_card1_progressBar"
+                    android:layout_alignEnd="@+id/ma_card1_progressBar"
+                    android:layout_alignBottom="@+id/ma_card1_progressBar"
                     android:gravity="center"
                     android:text="@string/placeholderPercentage"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
@@ -105,85 +114,109 @@
                     tools:ignore="SpUsage" />
 
                 <TextView
-                    android:id="@+id/ma_card1_header1"
+                    android:id="@+id/ma_card1_subtitle2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/ma_card1_subtitle"
+                    android:layout_below="@+id/ma_card1_separator"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/przepracawoano"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="12dp"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16dp"
                     tools:ignore="SpUsage" />
 
                 <TextView
                     android:id="@+id/ma_card1_body1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/ma_card1_header1"
-                    android:layout_alignStart="@+id/ma_card1_header1"
-                    android:layout_marginStart="12dp"
+                    android:layout_below="@id/ma_card1_subtitle2"
+                    android:layout_alignStart="@+id/ma_card1_subtitle2"
+                    android:layout_marginStart="40dp"
                     android:text="@string/placeholderTime"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="16dp"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textColor="@color/design_default_color_primary"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
                     tools:ignore="SpUsage" />
 
                 <TextView
-                    android:id="@+id/ma_card1_header2"
+                    android:id="@+id/ma_card1_subtitle3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/ma_card1_body1"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="4dp"
                     android:text="@string/pozostalo"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="12dp"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16dp"
                     tools:ignore="SpUsage" />
 
                 <TextView
                     android:id="@+id/ma_card1_body2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/ma_card1_header2"
+                    android:layout_below="@id/ma_card1_subtitle3"
                     android:layout_alignStart="@+id/ma_card1_body1"
                     android:text="@string/placeholderTime"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="16dp"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textColor="@color/design_default_color_primary"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
                     tools:ignore="SpUsage" />
 
+                <View
+                    android:id="@+id/ma_card1_separator2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/ma_card1_progressBar"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@color/colorPrimary" />
+
                 <TextView
-                    android:id="@+id/card1_actionButton"
+                    android:id="@+id/ma_card1_actionButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/ma_card1_separator2"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
                     android:text="@string/przejdzDoSesji"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-                    android:textColor="@color/my_app_primary_variant_color"
+                    android:textColor="@color/design_default_color_primary"
                     android:textSize="14dp"
                     tools:ignore="SpUsage" />
 
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginEnd="4dp">
+            android:orientation="horizontal"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="4dp">
+
+            <View
+                android:id="@+id/ma_card2_view_separator"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary" />
+
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card2"
-                android:layout_width="160dp"
+                android:layout_toStartOf="@+id/ma_card2_view_separator"
+                android:layout_alignParentStart="true"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
+                android:layout_marginEnd="2dp"
                 android:background="@color/white"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="10dp"
@@ -194,8 +227,8 @@
                 app:contentPadding="10dp">
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/ma_card2_header1"
@@ -206,8 +239,20 @@
                         android:text="@string/nadgodziny"
                         android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
                         android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold"
                         android:textSize="14dp"
                         tools:ignore="SpUsage" />
+
+                    <View
+                        android:id="@+id/ma_card2_separator"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_centerVertical="true"
+                        android:layout_below="@+id/ma_card2_header1"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@color/colorPrimary" />
 
                     <TextView
                         android:id="@+id/ma_card2_body1"
@@ -223,11 +268,22 @@
                         android:textSize="20dp"
                         tools:ignore="SpUsage" />
 
+                    <View
+                        android:id="@+id/ma_card2_separator2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_centerVertical="true"
+                        android:layout_below="@+id/ma_card2_body1"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@color/colorPrimary" />
+
                     <TextView
                         android:id="@+id/ma_card2_actionButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/ma_card2_body1"
+                        android:layout_below="@+id/ma_card2_separator2"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="8dp"
                         android:text="@string/szczegoly"
@@ -240,8 +296,11 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card3"
-                android:layout_width="160dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/ma_card2_view_separator"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="2dp"
                 android:background="@color/white"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="10dp"
@@ -252,8 +311,8 @@
                 app:contentPadding="10dp">
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/ma_card3_header1"
@@ -264,8 +323,20 @@
                         android:text="@string/wyplata"
                         android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
                         android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold"
                         android:textSize="14dp"
                         tools:ignore="SpUsage" />
+
+                    <View
+                        android:id="@+id/ma_card3_separator"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_centerVertical="true"
+                        android:layout_below="@+id/ma_card3_header1"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@color/colorPrimary" />
 
                     <TextView
                         android:id="@+id/ma_card3_body1"
@@ -281,28 +352,41 @@
                         android:textSize="20dp"
                         tools:ignore="SpUsage" />
 
+                    <View
+                        android:id="@+id/ma_card3_separator2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_centerVertical="true"
+                        android:layout_below="@+id/ma_card3_body1"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@color/colorPrimary" />
+
                     <TextView
                         android:id="@+id/ma_card3_actionButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/ma_card3_body1"
+                        android:layout_below="@+id/ma_card3_separator2"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="8dp"
                         android:text="@string/szczegoly"
                         android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
                         android:textColor="@color/my_app_primary_variant_color"
-                        android:textSize="14dp"
-                        tools:ignore="SpUsage" />
+                        android:textSize="14sp"
+                        />
                 </RelativeLayout>
 
             </com.google.android.material.card.MaterialCardView>
-        </LinearLayout>
+        </RelativeLayout>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card4"
-            android:layout_width="379dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
             android:background="@color/white"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="10dp"
@@ -316,6 +400,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <View
+                    android:id="@+id/ma_card4_vertical_separator"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignTop="@+id/ma_card4_separator"
+                    android:layout_alignBottom="@+id/ma_card4_separator2"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="#c0c0c0" />
+
                 <TextView
                     android:id="@+id/card4_headline"
                     android:layout_width="wrap_content"
@@ -323,10 +418,10 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/raport"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold"
-                    android:textSize="24dp"
+                    android:textSize="20dp"
                     tools:ignore="SpUsage" />
 
                 <TextView
@@ -340,6 +435,17 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="14dp"
                     tools:ignore="SpUsage" />
+
+                <View
+                    android:id="@+id/ma_card4_separator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/card4_subtitle1"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@color/colorPrimary" />
 
                 <TextView
                     android:id="@+id/card4_subtitle2"
@@ -358,12 +464,12 @@
                     android:id="@+id/card4_subtitle3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/card4_subtitle1"
+                    android:layout_below="@+id/ma_card4_separator"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/przepracowaneGodziny"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/przepracawoano"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="14dp"
                     tools:ignore="SpUsage" />
 
@@ -371,24 +477,15 @@
                     android:id="@+id/card4_subtitle4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/card4_subtitle1"
+                    android:layout_below="@+id/ma_card4_separator"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="@string/przepracowaneGodziny"
+                    android:text="@string/przepracawoano"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="14dp"
                     tools:ignore="SpUsage" />
-
-                <View
-                    android:id="@+id/separator"
-                    android:layout_width="2dp"
-                    android:layout_height="match_parent"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginBottom="20dp"
-                    android:background="#c0c0c0" />
 
                 <TextView
                     android:id="@+id/card4_body1"
@@ -456,7 +553,7 @@
                     android:layout_marginTop="4dp"
                     android:text="@string/zarobionePieniadze"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="14dp"
                     tools:ignore="SpUsage" />
 
@@ -470,7 +567,7 @@
                     android:layout_marginEnd="8dp"
                     android:text="@string/zarobionePieniadze"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="14dp"
                     tools:ignore="SpUsage" />
 
@@ -503,12 +600,23 @@
                     android:textSize="20dp"
                     tools:ignore="SpUsage" />
 
+                <View
+                    android:id="@+id/ma_card4_separator2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/card4_body6"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@color/colorPrimary" />
+
                 <TextView
                     android:id="@+id/card4_actionButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignEnd="@id/card4_subtitle2"
-                    android:layout_below="@+id/card4_body6"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/ma_card4_separator2"
                     android:layout_marginTop="8dp"
                     android:text="@string/wiecej"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
@@ -518,6 +626,6 @@
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
 
-    </com.google.android.flexbox.FlexboxLayout>
+    </LinearLayout>
 </ScrollView>
 
