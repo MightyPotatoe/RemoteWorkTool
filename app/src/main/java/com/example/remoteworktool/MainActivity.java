@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
             //Jeżeli nie, sprawdz czy dzisiaj jest dzień wolny
             final DayOfWeek dayOfWeek = LocalDateTime.now().getDayOfWeek();
             if(dayOfWeek.equals(DayOfWeek.SATURDAY) ||  dayOfWeek.equals(DayOfWeek.SUNDAY) || holidayName != null){
-                String text = "Dzisiejszy dzień jest dniem wolny, od pracy.\n" +
+                String text = "Dzisiejszy dzień jest dniem wolnym, od pracy.\n" +
                         "Dzisiaj jest ";
                 if(holidayName != null){
                     text += holidayName;
