@@ -28,5 +28,11 @@
 
     <string name="time0">0h 00min</string>
     <string name="progress100">100%</string>
+    <string name="progress0">0%</string>
     <string name="time8h">8h 00min</string>
+
+    <string name="dzienWolnyOdPracy">
+        Dzisiejszy dzień jest dniem wolnym od pracy.\n
+        Dzisiaj jest
+    </string>
 </resources>

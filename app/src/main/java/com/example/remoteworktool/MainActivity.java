@@ -19,14 +19,14 @@ public class MainActivity extends AppCompatActivity {
 
     //---******---Elementy UI ---******---
     //--- Card 1
-    private TextView card1_label1;
-    private TextView card1_label2;
-    private TextView card1_value1;
-    private TextView card1_value2;
+    private TextView card1_subtitle2;
+    private TextView card1_subtitle3;
+    private TextView card1_body1;
+    private TextView card1_body2;
     private ProgressBar card1_progressBar;
     private ProgressBar card1_progressBarBackground;
     private TextView card1_actionButton;
-    private TextView card1_progreess;
+    private TextView card1_progress_value;
 
     //Klasa obslugi baz danych
     private DatabaseHelper dbHelper;
@@ -48,14 +48,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Inicjowanie elementów UI
-        card1_label1 = findViewById(R.id.ma_card1_subtitle2);
-        card1_label2 = findViewById(R.id.ma_card1_subtitle3);
-        card1_value1 = findViewById(R.id.ma_card1_body1);
-        card1_value2 = findViewById(R.id.ma_card1_body2);
+        card1_subtitle2 = findViewById(R.id.ma_card1_subtitle2);
+        card1_subtitle3 = findViewById(R.id.ma_card1_subtitle3);
+        card1_body1 = findViewById(R.id.ma_card1_body1);
+        card1_body2 = findViewById(R.id.ma_card1_body2);
         card1_progressBar = findViewById(R.id.ma_card1_progressBar);
         card1_progressBarBackground = findViewById(R.id.ma_card1_progressBarInactive);
         card1_actionButton = findViewById(R.id.ma_card1_actionButton);
-        card1_progreess = findViewById(R.id.card1_progress_value);
+        card1_progress_value = findViewById(R.id.ma_card1_progress_value);
 
         //---Inicjowanie obsługi eventow typu TimeTick
         s_intentFilter.addAction(Intent.ACTION_TIME_TICK);
@@ -110,10 +110,9 @@ public class MainActivity extends AppCompatActivity {
             //Jeżeli nie, sprawdz czy dzisiaj jest dzień wolny
             final DayOfWeek dayOfWeek = LocalDateTime.now().getDayOfWeek();
             if(dayOfWeek.equals(DayOfWeek.SATURDAY) ||  dayOfWeek.equals(DayOfWeek.SUNDAY) || holidayName != null){
-                String text = "Dzisiejszy dzień jest dniem wolnym, od pracy.\n" +
-                        "Dzisiaj jest ";
+                String text = getResources().getString(R.string.dzienWolnyOdPracy);
                 if(holidayName != null){
-                    text += holidayName;
+                    text += holidayName + ".";
                 }
                 else if(dayOfWeek.equals(DayOfWeek.SATURDAY)){
                     text += "sobota.";
@@ -121,35 +120,50 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     text += "niedziela.";
                 }
-                card1_label1.setVisibility(View.VISIBLE);
-                card1_label1.setText(text);
-                card1_value1.setVisibility(View.INVISIBLE);
-                card1_label2.setVisibility(View.INVISIBLE);
-                card1_value2.setVisibility(View.INVISIBLE);
-                card1_progreess.setVisibility(View.INVISIBLE);
-                card1_progressBar.setVisibility(View.INVISIBLE);
-                card1_progressBarBackground.setVisibility(View.INVISIBLE);
+                setViewCard1_holiday(text);
             }
             else{
                 //jeżeli dzisiaj jest normalny dzień pracujący:
-                //ustaw przepracowany czas na 0
-                card1_label1.setVisibility(View.VISIBLE);
-                card1_value1.setVisibility(View.VISIBLE);
-                card1_value1.setText(R.string.time0);
-                //Ustaw pozostały czas pracy na 8h
-                card1_label2.setVisibility(View.VISIBLE);
-                card1_value2.setVisibility(View.VISIBLE);
-                card1_value2.setText(R.string.time8h);
-
-                card1_progreess.setVisibility(View.VISIBLE);
-                card1_progressBar.setVisibility(View.VISIBLE);
-                card1_progressBarBackground.setVisibility(View.VISIBLE);
+                setViewCard1_normalDay();
             }
-            card1_actionButton.setText(R.string.rozpocznijSesje);
+
         }
     }
 
 
 
+    //----------------PRESETY UI----------------
+    //----CARD 1 -- NORMALNY DZIEN PRACUJACY
+    public void setViewCard1_normalDay(){
+        //ustaw przepracowany czas na 0
+        card1_subtitle2.setVisibility(View.VISIBLE);
+        card1_body1.setVisibility(View.VISIBLE);
+        card1_body1.setText(R.string.time0);
+        //Ustaw pozostały czas pracy na 8h
+        card1_subtitle3.setVisibility(View.VISIBLE);
+        card1_body2.setVisibility(View.VISIBLE);
+        card1_body2.setText(R.string.time8h);
+
+        card1_progress_value.setVisibility(View.VISIBLE);
+        card1_progress_value.setText(R.string.progress0);
+        card1_progressBar.setProgress(0);
+        card1_progressBar.setVisibility(View.VISIBLE);
+        card1_progressBarBackground.setVisibility(View.VISIBLE);
+        card1_actionButton.setText(R.string.rozpocznijSesje);
+    }
+
+    //----CARD 1 -- SOBOTY, NIEDZIELE, SWIETA
+    public void setViewCard1_holiday(String holidayMessage){
+        card1_subtitle2.setVisibility(View.VISIBLE);
+        card1_subtitle2.setText(holidayMessage);
+        card1_body1.setVisibility(View.INVISIBLE);
+        card1_subtitle3.setVisibility(View.INVISIBLE);
+        card1_body2.setVisibility(View.INVISIBLE);
+        card1_progress_value.setVisibility(View.INVISIBLE);
+        card1_progressBar.setVisibility(View.INVISIBLE);
+        card1_progressBarBackground.setVisibility(View.INVISIBLE);
+        card1_actionButton.setText(R.string.rozpocznijSesje);
+
+    }
 
 }
